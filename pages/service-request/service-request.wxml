@@ -1,0 +1,60 @@
+<!--pages/service-request/service-request.wxml-->
+<view class="container page">
+  <view class="page__title">填写服务需求</view>
+  <scroll-view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view name="form-body">
+          <view class="weui-cells__title">房屋地址</view>
+          <view class="weui-cells weui-cells_after-title"
+            name="service-address">
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__bd">
+                  <input class="weui-input"
+                    bindinput="setServiceAddr" placeholder="输入地址" />
+              </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">手机号码</view>
+        <view class="weui-cells weui-cells_after-title" name="service-contact-mobile">
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__bd">
+                  <input class="weui-input"
+                    bindinput="setServiceContactMobile" placeholder="输入手机号码" />
+              </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">微信ID</view>
+        <view class="weui-cells weui-cells_after-title" name="service-contact-wechat">
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__bd">
+                  <input class="weui-input"
+                    bindinput="setServiceContactWechat" placeholder="输入微信ID" />
+              </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">具体项目</view>
+        <view class="weui-cells weui-cells_after-title" name="service-sub-type">
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__bd">
+                 <input class="weui-input" value = "{{service_sub_type}}"/>
+              </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">需求描述</view>
+        <view class="weui-cells weui-cells_after-title"
+          name="service-description">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" bindinput="setServiceDescp"
+                      placeholder="{{service_descp_placeholder}}" style="height: 5em" />
+                </view>
+            </view>
+        </view>
+      </view>
+      <view class="button-sp-area">
+        <button class="weui-btn mid-btn" type="primary" formType="submit">提交服务</button>
+        <button class="weui-btn mid-btn" type="default" formType="reset">重新填写</button>
+      </view>
+    </form>
+  </scroll-view>
+</view>

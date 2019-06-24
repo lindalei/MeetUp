@@ -1,0 +1,18 @@
+/* pages/service-request/service-request.wxss */
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.mid-btn{
+    width: 45%;
+    margin-top: 0
+}
+.text-box{
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff
+}

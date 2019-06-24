@@ -1,0 +1,53 @@
+<view class="page">
+  
+  <form bindsubmit="formSubmit">
+    <view class="page__bd page__bd_spacing weui-flex">
+      <checkbox-group bindchange="checkboxChange">
+        <view  wx:for="{{prices}}" wx:key="{{type}}">
+          <button class="main-menu" data-index="{{index}}" bindtap="displaySubMenu">{{item.type}}</button> 
+          <block wx:if="{{displaySubMenu[index]}}">
+           
+            <view wx:if="{{item.type =='单独保洁'}}" >
+              <view wx:for="{{item.detail}}" wx:key="subtype">   
+                <checkbox value="{{item.subtype}}" checked="{{item.checked}}"/>{{item.subtype}}：{{item.price}}元
+              </view> 
+            </view>
+          
+          <view wx:elif="{{item.type =='布草带走洗涤'}}" >
+              <view wx:for="{{item.detail}}" wx:key="subtype">   
+                <checkbox value="{{item.subtype}}" checked="{{item.checked}}"/>{{item.price}}元/{{item.subtype}}
+              </view> 
+            </view>
+
+            <view wx:elif="{{item.type =='布草租赁加洗涤'}}" >
+              <view wx:for="{{item.detail}}" wx:key="subtype">   
+                <checkbox value="{{item.subtype}}" checked="{{item.checked}}"/>{{item.price}}元/{{item.subtype}}
+              </view> 
+              备注：布草租赁需交押金400元
+            </view>
+
+            <view wx:else> 
+              <view > （上门费: 上线惊爆价 10元) </view>
+              <view wx:for="{{item.detail}}" wx:key="subtype">
+                <view wx:if="{{item.subtype =='其他'}}">  
+                  <checkbox  value="{{item.subtype}}" checked="{{item.checked}}"/>{{item.subtype}}：{{item.price}}元
+                </view>
+                <view wx:else>  
+                  <checkbox  value="{{item.subtype}}" checked="{{item.checked}}"/>{{item.subtype}}：{{item.price}}/{{item.unit}}
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </checkbox-group>
+    </view>
+    <view class="button-sp-area">
+      <button class="weui-btn"  type="primary" formType="submit">下一步／其他服务要求</button>
+    </view> 
+  </form>
+ </view>
+
+
+
+
+

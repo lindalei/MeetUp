@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/service-type/service-type",
+    "pages/service-request/service-request",
+    "pages/price-list/price-list",
+    "pages/message-page/message-page"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "A.Live民宿小管家",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "backgroundColor": "#f8f8f8"
+  },
+  "sitemapLocation": "sitemap.json"
+}

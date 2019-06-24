@@ -1,0 +1,46 @@
+<!--pages/service-type/service-type.wxml-->
+<view class="page">
+  <view class="page__title">报名系统</view>
+  <view class="sub__title">（目前所有服务仅限上海）</view>
+  <view class="itemView">微信ID
+    <input class="input" type="text" name="userName" placeholder="请输入用户名"
+    bindconfirm="userNameInput"/>
+  </view>
+  <view class="itemView">手机号
+    <input class="input" type="text" name="cellphone" placeholder="请输入手机号"
+    bindconfirm="cellphoneInput"/>
+  </view> 
+  <view class="itemView">身高
+    <input class="input" type="text" name="height" placeholder="请输入身高"
+    bindconfirm="heightInput"/>
+  </view> 
+   <view class="itemView">毕业学校
+     <input class="input" type="text" name="university" placeholder="请输入大学"
+    bindconfirm="universityInput"/>
+  </view>
+  <view class="itemView">学历
+    <radio-group bindchange="degreeSelect">
+     <radio>本科</radio>
+     <radio>硕士</radio>
+     <radio>博士</radio>
+     </radio-group>
+  </view>   
+  <view class="itemView">性别
+    <radio-group bindchange="ageSelect">
+     <radio>男</radio>
+     <radio>女</radio>
+     </radio-group>
+  </view> 
+
+   <view class="itemView">家乡
+    <picker mode="region" value="{{region}}" bindchange="bindRegionChange">
+      <view class="picker">{{region}} </view>   
+     </picker>
+  </view> 
+
+  <view class="section__title">生日
+     <picker mode="date" value="{{birth}}" bindchange="ageDeal">
+      <view class="picker">{{birth}} </view>   
+     </picker>
+  </view>
+</view>
